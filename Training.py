@@ -21,7 +21,6 @@ import numpy as np
 import pandas as pd
 from sklearn.metrics import f1_score
 from sklearn.metrics import classification_report, confusion_matrix, accuracy_score
-import time
 
 
 #Starting the spark session
@@ -96,7 +95,7 @@ testErr = labelsAndPredictions.filter(
 print('Test Error = ' + str(testErr))
 
 #save training model
-RFmodel.save(sc, 's3://pa2/data-output/trainingmodel.model' + str(round(time.time())))
+RFmodel.save(sc, 's3://pa2/data-output/trainingmodel.model')
 
 
 
